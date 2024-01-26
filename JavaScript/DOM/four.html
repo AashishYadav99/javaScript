@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>edition in created element</title>
+</head>
+<body>
+    <ul class="language">
+        <li>JavaScript</li>
+    </ul>
+</body>
+<script>
+    /* two mwthod to insert element with the help of javaScript */
+    function addLang(langName){
+       const li= document.createElement('li');
+       li.innerHTML=`${langName}`
+        document.querySelector('.language').appendChild(li)
+    }
+    addLang("python")
+    addLang('java')
+    addLang('MongoDB')
+    
+    function addOptLang (optLangName){
+        const li = document.createElement('li');
+        li.appendChild(document.createTextNode(optLangName))
+        document.querySelector(`.language`).appendChild(li)
+
+    }
+    addOptLang("xyz")
+
+    //edit
+    //replace and edit the inserted element from the list
+
+    const secondLang=document.querySelector('li:nth-child(2)')
+    console.log(secondLang);
+    //secondLang.innerHTML="MOJO"
+
+    //edit
+    // this method is usefull....
+    const newli=document.createElement('li')
+    newli.textContent="MOJO"
+    secondLang.replaceWith(newli)
+
+
+    // another method to insert the element
+
+
+    const firstLang=document.querySelector('li:first-child')
+    firstLang.outerHTML=`<li>TypeScript</li>`
+
+    // remove the element from the last
+
+    const remelement=document.querySelector('li:last-child')
+    remelement.remove()
+
+    // remove the element from the specific
+
+    const remelement1=document.querySelector('li:nth-child(2)')
+    remelement1.remove()
+
+
+</script>
+</html>
+
+
+// note keep practicing........
